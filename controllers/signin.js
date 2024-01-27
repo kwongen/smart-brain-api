@@ -24,7 +24,7 @@ const handleSignin = (db, bcrypt) => (req, res) => {
 		}
 	})
 	.catch(err => {
-		console.log(error)
+		console.log(err)
 		res.status(400).json('error occured')
 	})
 }
