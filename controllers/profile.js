@@ -8,10 +8,13 @@ const handleProfileGet = (req, res, db) => {
 		if(user.length) {
 			res.json(user[0]);
 		} else {
-			res.status(400).json("user not found")
+			res.status(400).json("user not found");
 		}
 	})
-	.catch(err => {res.status(400).json("error occured")});
+	.catch(err => {
+		console.log(err);
+		res.status(400).json("error occured");
+	});
 }
 
 module.exports = {

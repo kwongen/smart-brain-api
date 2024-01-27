@@ -53,7 +53,10 @@ const handleImage = (req,res,db) => {
 			res.status(400).json("No such user");
 		}
 	})
-	.catch(err => console.log("error occured"));
+	.catch(err => {
+		console.log(err);
+		res.status(400).json("error occured");
+	});
 }
 
 module.exports = {
